@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CRM Contact Center</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>CRM Contact Center 📞</h1>
+</header>
+
+<nav>
+    <a href="#">Inicio</a>
+    <a href="{{ url_for('clientes.lista_clientes') }}">Clientes</a>
+    <a href="#">Llamadas</a>
+    <a href="{{ url_for('dashboard.home') }}">Reporte</a>
+    <a href="{{ url_for('auth.logout') }}">Cerrar sesión</a>
+</nav>
+
+<div class="container">
+    <h2>Bienvenido</h2>
+    <p>Sistema en construcción 🚀</p>
+</div>
+
+</body>
+</html>

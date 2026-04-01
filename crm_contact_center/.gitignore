@@ -1,0 +1,23 @@
+# Entorno virtual (Pesado y no se comparte)
+.venv/
+venv/
+env/
+
+# Archivos temporales de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Base de datos local (Contiene datos, no código)
+database/crm.db
+*.db
+*.sqlite3
+
+# Carpetas de editores
+.vscode/
+.idea/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
