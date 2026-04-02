@@ -3,7 +3,7 @@ from app.routes import dashboard
 from app.routes.auth import auth
 from flask import session, redirect, url_for, render_template
 from app.routes.clientes import clientes_bp 
-from app.routes.dashboard import dashboard
+from app.routes.dashboard import dashboard_bp
 
 
 
@@ -15,7 +15,7 @@ def create_app():
     # registrar rutas (blueprints)
     app.register_blueprint(auth)
     app.register_blueprint(clientes_bp)
-    app.register_blueprint(dashboard)
+    app.register_blueprint(dashboard_bp)
 
     @app.route("/")
     def inicio():

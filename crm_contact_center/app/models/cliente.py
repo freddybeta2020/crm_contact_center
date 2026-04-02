@@ -42,4 +42,21 @@ def buscar_clientes(termino):
     
     clientes = conn.execute(query, (filtro, filtro)).fetchall()
     conn.close()
-    return clientes    
+    return clientes
+
+def obtener_cliente_por_id(cliente_id):
+    """Busca los datos de un solo cliente para cargarlos en el formulario."""
+    conn = get_db_connection()
+    cliente = conn.execute("SELECT * FROM clientes WHERE id = ?", (cliente_id,)).fetchone()
+    conn.close()
+    return cliente
+
+def actualizar_cliente(cliente_id, nombre, telefono, email):
+    """Guarda los cambios realizados en el perfil del cliente."""
+    conn = get_db_connection()
+    conn.execute(
+        "UPDATE clientes SET nombre = ?, telefono = ?, email = ? WHERE id = ?",
+        (nombre, telefono, email, cliente_id)
+    )
+    conn.commit()
+    conn.close()

@@ -31,7 +31,7 @@
         .active-nav { border-bottom: 2px solid #ffffff; color: white !important; }
 
         .card { border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        
+
         h2 { 
             font-weight: bold; 
             border-bottom: 2px solid #2c3e50; 
@@ -85,8 +85,17 @@
     {% endwith %}
 
     <div class="card p-4">
-        <!-- Título Centrado -->
-        <h2>Gestión de Clientes</h2>
+    <!-- Cabecera con botón de Regresar al Inicio -->
+    <div class="d-flex align-items-center mb-4">
+        <!-- BOTÓN REGRESAR AL INICIO -->
+        <a href="{{ url_for('dashboard.home') }}" class="btn btn-outline-secondary btn-sm me-3 rounded-circle" title="Volver al Inicio">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+
+        <h2 class="h4 mb-0 fw-bold" style="color: #2c3e50; border-bottom: none; text-align: left; margin-bottom: 0;">
+            Gestión de Clientes
+        </h2>
+    </div>
 
         <!-- Fila de Búsqueda y Botón Nuevo -->
         <div class="row align-items-center mb-4">
@@ -128,9 +137,11 @@
                         <td><i class="fas fa-phone-alt text-muted me-2"></i> {{ cliente['telefono'] }}</td>
                         <td><i class="far fa-envelope text-muted me-2"></i> {{ cliente['email'] }}</td>
                         <td class="text-center">
-                            <a href="#" class="btn btn-sm btn-outline-primary border-0 me-2" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </a>
+                        <a href="{{ url_for('clientes.editar_cliente', id=cliente['id']) }}"
+                          class="btn btn-sm btn-outline-primary border-0 me-2"
+                          title="Editar">
+                          <i class="fas fa-edit"></i>
+                        </a>
                             <a href="{{ url_for('clientes.eliminar', id=cliente['id']) }}" 
                                class="btn btn-sm btn-outline-danger border-0"
                                title="Eliminar"

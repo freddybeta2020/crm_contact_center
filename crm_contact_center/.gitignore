@@ -1,4 +1,4 @@
-# Entorno virtual (Pesado y no se comparte)
+# Ignorar archivos de entorno virtual
 .venv/
 venv/
 env/
@@ -9,7 +9,7 @@ __pycache__/
 *.pyo
 *.pyd
 
-# Base de datos local (Contiene datos, no código)
+# Archivos de configuración de entorno
 database/crm.db
 *.db
 *.sqlite3

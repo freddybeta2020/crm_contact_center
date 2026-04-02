@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}Editar Cliente{% endblock %}
+
+{% block body %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card p-4 shadow-sm border-0">
+            <h2 class="text-center fw-bold mb-4" style="color: #2c3e50;">Editar Cliente</h2>
+            
+            <form method="POST">
+                <div class="mb-3">
+                    <label class="form-label fw-bold small">NOMBRE COMPLETO:</label>
+                    <input type="text" name="nombre" class="form-control" value="{{ cliente['nombre'] }}" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold small">TELÉFONO / CELULAR:</label>
+                    <input type="text" name="telefono" class="form-control" value="{{ cliente['telefono'] }}" required>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-bold small">CORREO ELECTRÓNICO:</label>
+                    <input type="email" name="email" class="form-control" value="{{ cliente['email'] }}" required>
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary fw-bold" style="background-color: #2c3e50; border: none;">
+                        <i class="fas fa-save me-2"></i> Actualizar Información
+                    </button>
+                    <a href="{{ url_for('clientes.lista_clientes') }}" class="btn btn-link text-muted text-decoration-none small">
+                        Cancelar y volver
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
