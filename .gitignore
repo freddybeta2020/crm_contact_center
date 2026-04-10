@@ -1,0 +1,23 @@
+# Ignorar archivos de entorno virtual
+.venv/
+venv/
+env/
+
+# Archivos temporales de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos de configuración de entorno
+database/crm.db
+*.db
+*.sqlite3
+
+# Carpetas de editores
+.vscode/
+.idea/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
