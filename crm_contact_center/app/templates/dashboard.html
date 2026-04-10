@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<h1>Dashboard 📊</h1>
+
+<p>Bienvenido {{ session["usuario"] }}</p>
+
+<h3>Total de clientes: {{ total_clientes }}</h3>
+
+<!-- GRÁFICA -->
+<canvas id="miGrafica" width="400" height="200"></canvas>
+
+<script>
+    const ctx = document.getElementById('miGrafica');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Clientes'],
+            datasets: [{
+                label: 'Cantidad',
+                data: [{{ total_clientes }}],
+                borderWidth: 1
+            }]
+        }
+    });
+</script>
+
+<br>
+<a href="/clientes">Ir a clientes</a>
+
+</body>
+</html>
